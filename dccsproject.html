@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>A Web Page</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="functionsindexedDB.js"></script>
+</head>
+
+<body id="body">
+
+	<!-- Tab links -->
+	<div id="tab">
+		<button class="tablinks" onclick="openTab(event, 'Administration')">Administration</button>
+		<button class="tablinks" onclick="openTab(event, 'Formular'), refreshformularselect(SelectExistingFormular.length)">Formular</button>
+	</div>
+
+	<!-- Welcome page -->
+	<div id="welcome">
+		<p id="welcomep">Welcome to my page</p>
+	</div>
+
+	<!-- Tab content -->
+	<div id="Administration" class="tabcontent">
+		<div id="adminsearch">
+			<form action="JavaScript:adminsearch(formname.value)" >
+				Formular name:
+				<input id="formname" type="text" required>
+				<input type="submit" value="Search">
+			</form>
+		</div>
+		<br>
+		<div id="adminbody"> </div>
+		<br>
+		<div id="savebutton">
+			<input id="button" type="submit" value="Save">
+		</div>
+	</div>	
+
+	<div id="Formular" class="tabcontent">
+		<div id="formularsearch">
+			<form action="JavaScript:generateformular(SelectExistingFormular.value, version.value)">
+				Formular name:
+				<select id="SelectExistingFormular" required>
+					<option value="" selected disabled hidden>Choose here</option>
+				</select>
+				Version
+				<input id="version" type="number"  min="1" required>
+				<input type="submit" value="Load">
+			</form>
+		</div>
+		<br>
+		<div id="formularbody">
+			<form name="formularform" id="formularform" action="JavaScript:formularsave(SelectExistingFormular.value,version.value)"> </form>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<!--
+	<div id="template">
+		<input type="text" id="label" class="" value="">
+		<select id="inputtype" class="" onchange="createradiolabel(this, 'template')">
+			<option value="textbox">Textbox</option>
+			<option value="checkbox">Checkbox</option>
+			<option value="radiobuttons">Radio buttons</option>
+		</select>
+		<select id="radiobuttonsnumber" class="">
+			<option value="" selected disabled hidden></option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<select id="requirments" class="">
+			<option value="none">None</option>
+			<option value="mandatory">Mandatory</option>
+			<option value="numeric">Numeric</option>
+		</select>
+
+		<input type="submit" id="newdivbutton" class="" onclick="newdiv()" value="+">
+	
+		<br>
+		
+		<div id="buttonsvalues" class=""> </div>		
+	
+		</div>
+	</div>
+
+	<div id="test">
+		Label 1: <input type="text" required> <br>
+		Label 2: <input type="text"><br>
+		Label 3: <input type="checkbox"><br>
+		Label 4: <input type="text"><br>
+		Label 5: 
+  			<input type="radio" id="Radiobutton1" name="drone" checked>
+ 			<label for="Radiobutton1">Radio button 1</label>
+			<br>
+			<input type="radio" id="Radiobutton2" name="drone">
+			<label for="Radiobutton2" value="">Radio button 2</label>
+			<br>
+  			<input type="radio" id="Radiobutton3" name="drone" >
+		 	<label for="Radiobutton3">Radio button 3</label>
+			<br>
+		Label 6: <input type="text">	
+	</div>
+-->
